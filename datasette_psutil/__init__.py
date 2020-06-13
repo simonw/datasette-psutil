@@ -8,7 +8,10 @@ async def show_psutil():
 
     def info(code):
         lines.append(code)
-        result = eval(code, {"process": process, "psutil": psutil,})
+        try:
+            result = eval(code, {"process": process, "psutil": psutil,})
+        except Exception as e:
+            result = [e]
         if not isinstance(result, list):
             result = [result]
         lines.extend("  " + repr(r) for r in result)
