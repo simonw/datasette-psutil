@@ -15,3 +15,7 @@ Install this plugin in the same environment as Datasette.
 ## Usage
 
 Visit `/-/psutil` on your Datasette instance to see various information provided by [psutil](https://psutil.readthedocs.io/).
+
+## Demo
+
+https://latest-with-plugins.datasette.io/-/psutil is a live demo of this plugin, here hosted on Google Cloud Run.
