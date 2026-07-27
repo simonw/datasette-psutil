@@ -1,0 +1,31 @@
+[project]
+name = "datasette-psutil"
+version = "0.1"
+description = "Datasette plugin adding a /-/psutil debugging endpoint"
+readme = "README.md"
+authors = [{name = "Simon Willison"}]
+license = "Apache-2.0"
+dependencies = ["datasette>=0.44", "psutil"]
+
+[project.urls]
+Homepage = "https://github.com/simonw/datasette-psutil"
+Issues = "https://github.com/simonw/datasette-psutil/issues"
+CI = "https://github.com/simonw/datasette-psutil/actions"
+Changelog = "https://github.com/simonw/datasette-psutil/releases"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-asyncio", "httpx"]
+
+[project.entry-points.datasette]
+psutil = "datasette_psutil"
+
+[dependency-groups]
+dev = ["pytest", "pytest-asyncio", "httpx"]
+
+[build-system]
+requires = ["uv_build>=0.11.0,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+source-include = ["tests/**"]
