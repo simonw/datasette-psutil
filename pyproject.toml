@@ -1,6 +1,6 @@
 [project]
 name = "datasette-psutil"
-version = "0.1"
+version = "0.2.1"
 description = "Datasette plugin adding a /-/psutil debugging endpoint"
 readme = "README.md"
 authors = [{name = "Simon Willison"}]
