@@ -5,6 +5,7 @@ description = "Datasette plugin adding a /-/psutil debugging endpoint"
 readme = "README.md"
 authors = [{name = "Simon Willison"}]
 license = "Apache-2.0"
+requires-python = ">=3.11"
 dependencies = ["datasette>=0.44", "psutil"]
 
 [project.urls]
