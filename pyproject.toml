@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [{name = "Simon Willison"}]
 license = "Apache-2.0"
 requires-python = ">=3.11"
-dependencies = ["datasette>=0.44", "psutil"]
+dependencies = ["datasette>=0.50", "psutil>=6.0"]
 
 [project.urls]
 Homepage = "https://github.com/simonw/datasette-psutil"
@@ -15,18 +15,21 @@ CI = "https://github.com/simonw/datasette-psutil/actions"
 Changelog = "https://github.com/simonw/datasette-psutil/releases"
 
 [project.optional-dependencies]
-test = ["pytest", "pytest-asyncio", "httpx"]
+test = ["pytest", "pytest-asyncio"]
 
 [project.entry-points.datasette]
 psutil = "datasette_psutil"
 
 [dependency-groups]
-dev = ["pytest", "pytest-asyncio", "httpx"]
+dev = ["pytest", "pytest-asyncio"]
 
 [build-system]
-requires = ["uv_build>=0.11.0,<0.12.0"]
+requires = ["uv_build>=0.11.0,<0.14.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-root = ""
 source-include = ["tests/**"]
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"

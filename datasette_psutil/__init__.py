@@ -19,7 +19,7 @@ async def show_psutil():
 
     process = psutil.Process()
     info("process.open_files()")
-    info("process.connections()")
+    info("process.net_connections()")
     info("process.memory_info()")
     info("process.cmdline()")
     info("process.parents()")
